@@ -8,7 +8,8 @@
             <list> -->  <list> + <digit>
                     |   <list> - <digit>
                     |   <digit>
-            <digig> --> 1
+            <digit> --> 0
+                    |   1
                     |   2
                     |   3
                     |   4
@@ -89,7 +90,8 @@
         <list> -->  <list1> + <digit>   |       list.t = list1.t || digit.t || "+"
                 |   <list1> - <digit>   |       list.t = list1.t || digit.t || "-"
                 |   <digit>             |       list.t = digit.t
-        <digig> --> 1                   |       digit.t = "1"
+        <digit> --> 0                   |       digit.t = "0"
+                |   1                   |       digit.t = "1"
                 |   2                   |       digit.t = "2"
                 |   3                   |       digit.t = "3"
                 |   4                   |       digit.t = "4"
@@ -107,7 +109,8 @@
         <list> -->  <list> + <digit>    { print("+") }
                 |   <list> - <digit>    { print("-") }
                 |   <digit>
-        <digig> --> 1           { print("1") }
+        <digit> --> 0           { print("0") }
+                |   1           { print("1") }
                 |   2           { print("2") }
                 |   3           { print("3") }
                 |   4           { print("4") }
@@ -129,7 +132,8 @@
         <rest> -->  + <digit> { print("+") }  rest
                 |   - <digit> { print("-") }  rest
                 | <空>
-        <digit> --> 1           { print("1") }
+        <digit> --> 0           { print("0") }
+                |   1           { print("1") }
                 |   2           { print("2") }
                 |   3           { print("3") }
                 |   4           { print("4") }
